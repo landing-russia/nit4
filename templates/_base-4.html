@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru"
+      x-cloak
+      x-data="{'darkMode': false}"
+      x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         localStorage.clear();
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+      :class="{'dark': darkMode === true}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <title>Красная Нить</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="{% if debug %}{% static 'src/output.css' %}{% else %}{% static 'src/output-min.css' %}{% endif %}">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+</head>
+
+<body class="bg-white dark:bg-gray-950 font-sans">
+{% include 'partials/navbar.html' %}
+
+<div>
+    {% block content %}
+    {% endblock content %}
+</div>
+
+<script>
+    const body = document.body;
+    let lastScroll = 0;
+
+    window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll <= 0) {
+            body.classList.remove("scroll-up");
+            return;
+        }
+
+        if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
+            body.classList.remove("scroll-up");
+            body.classList.add("scroll-down");
+        } else if (
+            currentScroll < lastScroll &&
+            body.classList.contains("scroll-down")
+        ) {
+            body.classList.remove("scroll-down");
+            body.classList.add("scroll-up");
+        }
+        lastScroll = currentScroll;
+    });
+
+</script>
+
+
+</body>
+
+</html>

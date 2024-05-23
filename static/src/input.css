@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.scroll-down header#navbar {
+    transform: translate3d(0, -100%, 0);
+}
+

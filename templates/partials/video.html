@@ -1,0 +1,58 @@
+{% load static %}
+
+<div id="video" class="relative px-6 py-20 sm:px-12 sm:py-28 lg:px-16 bg-cyan-200 transition-all duration-300 dark:bg-cyan-950">
+    <div class="relative w-full mx-auto flex max-w-6xl flex-col grow items-center text-center">
+        <h3 class="text-3xl font-bold tracking-tight text-gray-700 dark:text-gray-300 sm:text-4xl">
+            Освящение нити
+        </h3>
+        <p class="mt-5 text-xl text-gray-700 dark:text-gray-300">Освящая нить, нами соблюдается каждая буква
+            закона</p>
+        <div class="w-full mt-10">
+            <style>.embed-container {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+                max-width: 100%;
+            }
+
+            .embed-container iframe, .embed-container object, .embed-container embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }</style>
+            <div class="embed-container bg-gray-100 dark:bg-gray-950 rounded-xl shadow-lg border border-1 border-gray-300 dark:border-gray-700">
+                <iframe src="https://www.youtube.com/embed/5jMLcnLZgjE"
+                        srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/5jMLcnLZgjE?autoplay=1><img src=https://img.youtube.com/vi/5jMLcnLZgjE/maxresdefault.jpg><span>▶</span></a>"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+        {#        <iframe class="mt-5 w-full aspect-video" src="https://www.youtube.com/embed/5jMLcnLZgjE?si=J_wu5uKVUEA5Hyho"#}
+        {#                title="YouTube video player" frameborder="0"#}
+        {#                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"#}
+        {#                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>#}
+        <p class="mt-5 text-sm lg:text-base text-gray-700 dark:text-gray-300">
+            Иерусалим (Вифлеем). Гробница Рахели.</p>
+{#        <p class="mt-16">#}
+{#            <a href="#video"#}
+{#           class="text-white font-medium rounded-lg text-base px-6 py-3.5 text-center inline-flex items-center bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80">#}
+{#            Как правильно повязать нить#}
+{#        </a>#}
+{#        </p>#}
+    </div>
+</div>
+
+
+{#<iframe class="mt-5 aspect-video w-full" src="https://www.youtube.com/embed/5jMLcnLZgjE"#}
+{#        srcdoc="<style>img,span{position:absolute;width:95%;height:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/5jMLcnLZgjE?autoplay=1><img src={% static 'img/nit.jpg' %}><span>▶</span></a>"#}
+{#        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"#}
+{#        allowfullscreen loading="lazy"></iframe>#}
+{##}
+{##}
+{#<video class="w-full" controls>#}
+{#    <source src="{% static 'video/nit.mov' %}" type="video/mp4">#}
+{#    Your browser does not support the video tag.#}
+{#</video>#}
